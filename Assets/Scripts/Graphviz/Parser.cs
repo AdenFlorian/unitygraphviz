@@ -15,11 +15,11 @@ public class Parser {
 
         string[] lines = source.Split('\n');
 
-        logger.Log("Lines...");
+        /*logger.Log("Lines...");
         for (int i = 0; i < lines.Length; i++) {
             logger.Log("Line " + i + ": " + lines[i]);
         }
-        logger.Log("...End Lines");
+        logger.Log("...End Lines");*/
 
         graph = ParseGraphLine(lines[0]);
 
@@ -34,7 +34,7 @@ public class Parser {
         graph.edges = new GVEdge[edgeCount];
 
         for (int i = 0; i < edgeCount; i++) {
-            graph.edges[i] = ParseEdge(lines[1 + nodeCount]);
+            graph.edges[i] = ParseEdge(lines[i + 1 + nodeCount]);
         }
 
         return graph;
