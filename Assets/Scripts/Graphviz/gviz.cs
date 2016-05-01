@@ -23,7 +23,9 @@ public class gviz : MonoBehaviour {
 
         UnityEngine.Debug.Log("output: " + output);
 
-        Parser.ParseGraphSource(output);
+        Parser parser = new Parser(new UnityLogger());
+
+        GVGraph graph = parser.ParseGraphSource(output);
     }
 	
 	// Update is called once per frame
